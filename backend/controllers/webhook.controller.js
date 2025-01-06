@@ -10,7 +10,7 @@ export const clerkWebHook = async (req, res) => {
   const payload = req.body;
   const headers = req.headers;
 
-  const wh = new Webhook(secret);
+  const wh = new Webhook(WEBHOOK_SECRET);
   let evt;
   try {
     evt = wh.verify(payload, headers);
@@ -20,7 +20,11 @@ export const clerkWebHook = async (req, res) => {
     });
   }
 
-  if (evt.type === "user.created") {
-    console.log("userId:", evt.data.id);
-  }
+console.log(evt.data)
+
+  // if (evt.type === "user.created") {
+    // const newUser = new User({
+       // clerkUserId: evt.data.id,
+    //})
+ // }
 };
