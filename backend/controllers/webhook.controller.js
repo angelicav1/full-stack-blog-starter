@@ -29,5 +29,7 @@ export const clerkWebHook = async (req, res) => {
       email: evt.data.email_addresses[0].email_address,
       img:evt.data.profile_img_url
     });
+
+    await newUser.save()
   }
 };
