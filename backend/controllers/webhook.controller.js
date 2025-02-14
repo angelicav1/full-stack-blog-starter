@@ -1,5 +1,3 @@
-import User from '../models/user.model.js';
-
 export const clerkWebHook = async (req, res) => {
   const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET;
 
@@ -19,6 +17,7 @@ export const clerkWebHook = async (req, res) => {
       message: 'Webhook verification failed',
     });
   }
+
 
   // console.log(evt.data)
 
